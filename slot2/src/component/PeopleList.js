@@ -24,9 +24,9 @@ function PeopleList (){
         <tbody>
           {People.map((person, index) => (
             <tr key={index}>
-              <td>{person.name}</td>
+              <td>{person.Name}</td>
               <td>{person.age}</td>
-              <td>{person.occupation}</td>
+              <td>{person.occupation}</td>    
             </tr>
           ))}
         </tbody>
