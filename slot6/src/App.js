@@ -1,12 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import EX7 from './components/Ex7';
+import React from "react";
+
+
+import Lab2 from "./components/Lab2";
+import Chat from "./components/Chat";
+
 
 function App() {
   return (
-    <div className="App">
-      <EX7/>
-    </div>
+  <div>
+  <Lab2/>
+
+  </div>
   );
 }
 
