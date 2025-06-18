@@ -16,7 +16,7 @@ function Lab2() {
         <>
             <div className="container-fluid bg-dark text-white">
                 <div className="row">
-                    <Navbar />
+                   <Navbar/>
                     <Slide />
                     <MenuItem />
                     <Footer />

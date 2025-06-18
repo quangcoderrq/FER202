@@ -7,7 +7,7 @@ function AverageAgeByOccupation() {
     { Name: "truong", age: 30, occupation: "Teacher" },
   ];
 
-  // Group people by occupation and calculate average age
+
   const groupedByOccupation = people.reduce((acc, person) => {
     const { occupation, age } = person;
     if (!acc[occupation]) {
@@ -18,7 +18,7 @@ function AverageAgeByOccupation() {
     return acc;
   }, {});
 
-  // Calculate averages
+
   const averageAges = Object.keys(groupedByOccupation).reduce((acc, occupation) => {
     const { totalAge, count } = groupedByOccupation[occupation];
     acc[occupation] = totalAge / count;

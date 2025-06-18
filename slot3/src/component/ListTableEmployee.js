@@ -12,6 +12,7 @@ return(
       <table border="1">
         <thead>
           <tr>
+             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
             <th>Occupation</th>
@@ -20,6 +21,7 @@ return(
         <tbody>
           {employees.map((person, index) => (
             <tr key={index}>
+              <td>{index+1}</td>
               <td>{person.name}</td>
              <td>{person.department}</td> 
              <td>{person.age}</td>    

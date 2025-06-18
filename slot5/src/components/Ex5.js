@@ -135,7 +135,7 @@ function Ex5() {
                 <h5 className="card-title">Lê Hoàng Minh</h5>
                 <p className="card-text">DE170049</p>
                 <div>
-                  <input type="radio" name="status4" /> Absent
+                  <input type="radio" name="status4" checked/> Absent
                   <input type="radio" name="status4" /> Present
                 </div>
                 <button className="btn btn-warning mt-2">Submit</button>

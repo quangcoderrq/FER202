@@ -10,8 +10,10 @@ return(
 <div>
     <h1>list of Employee</h1>
     <ul>
-        {employees.map((person,index)=>(
-            <li key={index}>Name:{person.name}, Age:{person.age}, Department:{person.department}</li>
+        {employees.map(person=>(
+            <li style={{color:"Blue"}} key={person.id || person.name}>
+               ({person.id}?<p>id:{person.id}</p>:<p>no id</p>),
+           Name:{person.name}, Age:{person.age}, Department:{person.department}</li>
         ))}
     </ul>
 </div>

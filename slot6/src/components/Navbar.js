@@ -1,7 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/css/all.css";
-import "bootstrap/dist/js/bootstrap.bundle.js";
 function Navbar() {
     return (
          <div className="col-lg-12">
@@ -61,5 +58,4 @@ function Navbar() {
                     </div>
     );
 }
-
 export default Navbar;

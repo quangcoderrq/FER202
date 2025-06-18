@@ -1,6 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/css/all.css";
-import "bootstrap/dist/js/bootstrap.bundle.js";
+
 export const Slide = () => (
   <div className="col-lg-12 mb-5">
     <div className="row">

@@ -11,7 +11,7 @@ function TeenagerCheck() {
 
   return (
     <div>
-      <h2>Teenager Check</h2>
+      <h2>Teenager Check</h2>--
       <p>Is any employee a teenager? {isTeenager.toString()}</p>
     </div>
   );

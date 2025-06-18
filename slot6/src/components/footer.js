@@ -1,6 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/css/all.css";
-import "bootstrap/dist/js/bootstrap.bundle.js";
+
 export const Footer =()=>{
     return(
        <div className="col-lg-12">
@@ -17,7 +15,8 @@ export const Footer =()=>{
                                     <div className="col">
                                         <select id="inputState" class="form-select">
                                             <option selected>Choose...</option>
-                                            <option>...</option>
+                                            <option>quang</option>
+                                             <option>quang</option>
                                         </select>
                                     </div>
                                 </div>
