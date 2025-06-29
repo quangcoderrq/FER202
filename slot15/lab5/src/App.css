@@ -1,0 +1,69 @@
+body {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.home-container, .quiz-container, .about-container, .news-container, .contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  max-height: 450px;
+}
+
+.bg-gradient-custom {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+}
+
+.carousel-custom {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news-card-hover {
+  transition: transform 0.3s ease;
+}
+
+.news-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-question-card {
+  background-color: #fff;
+  border-color: #007bff;
+}
+
+.quiz-radio input[type="radio"] {
+  margin-right: 10px;
+}
+
+.quiz-radio label {
+  font-size: 1.1rem;
+}
+
+.nav-link-hover {
+  transition: color 0.3s ease;
+}
+
+.nav-link-hover:hover {
+  color: #007bff !important;
+}
+
+.animate-pulse-custom {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
