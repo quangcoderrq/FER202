@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "title": "React Router Cơ bản",
+    "content": "Bài viết này giải thích các khái niệm cơ bản của React Router trong ứng dụng React."
+  },
+  {
+    "id": "2",
+    "title": "Giới thiệu React Bootstrap",
+    "content": "Bài viết này hướng dẫn cách sử dụng React Bootstrap để tạo giao diện đẹp."
+  },
+  {
+    "id": "3",
+    "title": "Tính năng ES6 JavaScript",
+    "content": "Bài viết này thảo luận về các tính năng mới được giới thiệu trong JavaScript ES6."
+  }
+]

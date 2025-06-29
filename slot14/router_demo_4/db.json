@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "React Router Nâng cao",
+      "content": "Bài viết về các tính năng nâng cao của React Router",
+      "author": "John Doe",
+      "createdAt": "2025-06-01"
+    },
+    {
+      "id": 2,
+      "title": "State Management với Redux",
+      "content": "Hướng dẫn quản lý state với Redux trong React",
+      "author": "Jane Smith",
+      "createdAt": "2025-06-02"
+    },
+    {
+      "id": 3,
+      "title": "React Hooks Best Practices",
+      "content": "Các best practices khi sử dụng React Hooks",
+      "author": "Bob Johnson",
+      "createdAt": "2025-06-03"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456",
+      "role": "admin"
+    }
+  ]
+}
