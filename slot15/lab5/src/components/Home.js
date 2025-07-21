@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import MenuItems from './MenuItems';
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -12,26 +13,11 @@ function Home() {
     return () => clearInterval(timer); 
   }, []);
 
-  const formattedTime = currentTime.toLocaleString('vi-VN', {
-    timeZone: 'Asia/Ho_Chi_Minh',
-    hour12: false,
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric'
-  });
+
 
   return (
     <div>
-      <div className="intro-section text-center mb-4">
-        <h1>Chào mừng đến với Quiz App</h1>
-        <p className="lead">
-          Chúc bạn một buổi sáng sớm tuyệt vời! Hiện tại là: {formattedTime} (Giờ Việt Nam).
-        </p>
-        <p>Khám phá kiến thức và tin tức thú vị với chúng tôi!</p>
-      </div>
+     
       <Carousel>
         <Carousel.Item>
           <img
@@ -106,6 +92,11 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+<MenuItems />
+
+       <div className="intro-section text-center mb-4">
+        <h1 style={{ color: 'Red' }}> This is the Home Page</h1>
+      </div>
     </div>
   );
 }

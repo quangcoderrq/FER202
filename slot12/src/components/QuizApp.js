@@ -15,7 +15,7 @@ const QuizApp = () => {
       options: ["Jupiter", "Saturn", "Mars", "Earth"],
       answer: "Jupiter",
     },
-  ]);
+  ]); 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
@@ -41,6 +41,7 @@ const QuizApp = () => {
     setSelectedAnswer("");
     setQuizEnd(false);
   };
+  
   return (
     <div className="quiz-app">
       {!quizEnd ? (

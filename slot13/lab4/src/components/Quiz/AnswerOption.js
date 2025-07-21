@@ -24,9 +24,9 @@ const AnswerOption = ({ questionIndex, answer, answerIndex }) => {
       } border-2`}
     >
       <input
-        type="radio"
+        type="radio" 
         name={`question-${questionIndex}`}
-        value={answer}
+        value={answer} 
         checked={isSelected}
         onChange={() => !showResults && selectAnswer(questionIndex, answer)}
         disabled={showResults}

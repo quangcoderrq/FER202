@@ -19,7 +19,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quiz" element={<Quiz />} />
-          <Route path="*" element={<h2>404 - Trang không tìm thấy</h2>} />
         </Routes>
       </Container>
     </div>

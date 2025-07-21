@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import './Contact.css';
 
 function Contact() {
+  const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -8,11 +11,8 @@ function Contact() {
     city: '',
     state: '',
     zip: '',
-    agreeTerms: false
+    terms: false
   });
-
-  const [validated, setValidated] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,203 +22,144 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.currentTarget;
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    event.preventDefault();
     
-    if (form.checkValidity() === false || !formData.agreeTerms) {
-      e.stopPropagation();
-      setValidated(true);
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
     } else {
-      setShowSuccess(true);
-      // Reset form after successful submission
-      setFormData({
-        firstName: '',
-        lastName: '',
-        username: '',
-        city: '',
-        state: '',
-        zip: '',
-        agreeTerms: false
-      });
-      setValidated(false);
+      console.log('Form submitted:', formData);
+      // Process form data here
     }
+    
+    setValidated(true);
   };
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px', fontFamily: 'Arial, sans-serif' }}>
-      {/* Bootstrap CSS */}
-      <link 
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" 
-        rel="stylesheet" 
-      />
-      
-      {showSuccess && (
-        <div className="alert alert-success alert-dismissible fade show" role="alert">
-          Form submitted successfully! Thank you for your information.
-          <button 
-            type="button" 
-            className="btn-close" 
-            onClick={() => setShowSuccess(false)}
-            aria-label="Close"
-          ></button>
-        </div>
-      )}
-
-      <div className={`needs-validation ${validated ? 'was-validated' : ''}`}>
-        <div className="row mb-3">
-          {/* First name */}
-          <div className="col-md-4">
-            <label htmlFor="firstName" className="form-label">First name</label>
-            <input
+    <Container className="mt-4">
+      <h1>Contact</h1>
+      <Form noValidate validated={validated} onSubmit={handleSubmit} className="contact-form">
+        <Row className="mb-3">
+          <Form.Group as={Col} md="4" controlId="validationCustom01">
+            <Form.Label>First name</Form.Label>
+            <Form.Control
+              required
               type="text"
-              className={`form-control ${formData.firstName ? 'is-valid' : validated && !formData.firstName ? 'is-invalid' : ''}`}
-              id="firstName"
+              placeholder="First name"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              placeholder="Mark"
-              required
             />
-            <div className="valid-feedback">
-              Looks good!
-            </div>
-            <div className="invalid-feedback">
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
               Please provide a valid first name.
-            </div>
-          </div>
-
-          {/* Last name */}
-          <div className="col-md-4">
-            <label htmlFor="lastName" className="form-label">Last name</label>
-            <input
+            </Form.Control.Feedback>
+          </Form.Group>
+          
+          <Form.Group as={Col} md="4" controlId="validationCustom02">
+            <Form.Label>Last name</Form.Label>
+            <Form.Control
+              required
               type="text"
-              className={`form-control ${formData.lastName ? 'is-valid' : validated && !formData.lastName ? 'is-invalid' : ''}`}
-              id="lastName"
+              placeholder="Last name"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              placeholder="Otto"
-              required
             />
-            <div className="valid-feedback">
-              Looks good!
-            </div>
-            <div className="invalid-feedback">
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
               Please provide a valid last name.
-            </div>
-          </div>
-
-          {/* Username */}
-          <div className="col-md-4">
-            <label htmlFor="username" className="form-label">Username</label>
+            </Form.Control.Feedback>
+          </Form.Group>
+          
+          <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+            <Form.Label>Username</Form.Label>
             <div className="input-group">
-              <span className="input-group-text">@</span>
-              <input
+              <span className="input-group-text" id="inputGroupPrepend">@</span>
+              <Form.Control
                 type="text"
-                className={`form-control ${!formData.username && validated ? 'is-invalid' : ''}`}
-                id="username"
+                placeholder="Username"
+                aria-describedby="inputGroupPrepend"
+                required
                 name="username"
                 value={formData.username}
                 onChange={handleChange}
-                placeholder="Username"
-                required
               />
-              <div className="invalid-feedback">
+              <Form.Control.Feedback type="invalid">
                 Please choose a username.
-              </div>
+              </Form.Control.Feedback>
             </div>
-          </div>
-        </div>
-
-        <div className="row mb-3">
-          {/* City */}
-          <div className="col-md-6">
-            <label htmlFor="city" className="form-label">City</label>
-            <input
+          </Form.Group>
+        </Row>
+        
+        <Row className="mb-3">
+          <Form.Group as={Col} md="6" controlId="validationCustom03">
+            <Form.Label>City</Form.Label>
+            <Form.Control
               type="text"
-              className={`form-control ${!formData.city && validated ? 'is-invalid' : ''}`}
-              id="city"
+              placeholder="City"
+              required
               name="city"
               value={formData.city}
               onChange={handleChange}
-              placeholder="City"
-              required
             />
-            <div className="invalid-feedback">
+            <Form.Control.Feedback type="invalid">
               Please provide a valid city.
-            </div>
-          </div>
-
-          {/* State */}
-          <div className="col-md-3">
-            <label htmlFor="state" className="form-label">State</label>
-            <input
+            </Form.Control.Feedback>
+          </Form.Group>
+          
+          <Form.Group as={Col} md="3" controlId="validationCustom04">
+            <Form.Label>State</Form.Label>
+            <Form.Control
               type="text"
-              className={`form-control ${!formData.state && validated ? 'is-invalid' : ''}`}
-              id="state"
+              placeholder="State"
+              required
               name="state"
               value={formData.state}
               onChange={handleChange}
-              placeholder="State"
-              required
             />
-            <div className="invalid-feedback">
+            <Form.Control.Feedback type="invalid">
               Please provide a valid state.
-            </div>
-          </div>
-
-          {/* Zip */}
-          <div className="col-md-3">
-            <label htmlFor="zip" className="form-label">Zip</label>
-            <input
+            </Form.Control.Feedback>
+          </Form.Group>
+          
+          <Form.Group as={Col} md="3" controlId="validationCustom05">
+            <Form.Label>Zip</Form.Label>
+            <Form.Control
               type="text"
-              className={`form-control ${!formData.zip && validated ? 'is-invalid' : ''}`}
-              id="zip"
+              placeholder="Zip"
+              required
               name="zip"
               value={formData.zip}
               onChange={handleChange}
-              placeholder="Zip"
-              required
             />
-            <div className="invalid-feedback">
+            <Form.Control.Feedback type="invalid">
               Please provide a valid zip.
-            </div>
-          </div>
-        </div>
-
-        {/* Terms checkbox */}
-        <div className="mb-3">
-          <div className="form-check">
-            <input
-              className={`form-check-input ${!formData.agreeTerms && validated ? 'is-invalid' : ''}`}
-              type="checkbox"
-              id="agreeTerms"
-              name="agreeTerms"
-              checked={formData.agreeTerms}
-              onChange={handleChange}
-              required
-            />
-            <label className="form-check-label" htmlFor="agreeTerms">
-              Agree to terms and conditions
-            </label>
-            <div className="invalid-feedback">
-              You must agree before submitting.
-            </div>
-          </div>
-        </div>
-
-        {/* Submit button */}
-        <button
-          className="btn btn-primary"
-          type="submit"
-          onClick={handleSubmit}
-        >
-          Submit form
-        </button>
-      </div>
-    </div>
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+        
+        <Form.Group className="mb-3">
+          <Form.Check
+            required
+            name="terms"
+            checked={formData.terms}
+            onChange={handleChange}
+            label="Agree to terms and conditions"
+            feedback="You must agree before submitting."
+            feedbackType="invalid"
+            id="validationFormik0"
+          />
+          {!formData.terms && validated && (
+            <div className="text-danger small">You must agree before submitting.</div>
+          )}
+        </Form.Group>
+        
+        <Button type="submit">Submit form</Button>
+      </Form>
+    </Container>
   );
 }
 
-export default Contact;
+export default Contact; 
