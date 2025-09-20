@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Quỳnh Nhi! 🎉</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .birthday-text {
+            font-family: 'Dancing Script', cursive;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        
+        .sparkle {
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.2); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            animation: confetti-fall 3s linear infinite;
+        }
+        
+        .confetti:nth-child(2) { left: 20%; animation-delay: 0.5s; background: #4ecdc4; }
+        .confetti:nth-child(3) { left: 40%; animation-delay: 1s; background: #45b7d1; }
+        .confetti:nth-child(4) { left: 60%; animation-delay: 1.5s; background: #96ceb4; }
+        .confetti:nth-child(5) { left: 80%; animation-delay: 2s; background: #feca57; }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .balloon {
+            animation: balloon-float 4s ease-in-out infinite;
+        }
+        
+        @keyframes balloon-float {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-30px) rotate(2deg); }
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff6b6b; }
+            to { text-shadow: 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #4ecdc4; }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <!-- Confetti Animation -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    
+    <!-- Main Content -->
+    <div class="text-center max-w-4xl mx-auto">
+        <!-- Balloons -->
+        <div class="absolute top-10 left-10 balloon">
+            <div class="text-6xl">🎈</div>
+        </div>
+        <div class="absolute top-20 right-10 balloon" style="animation-delay: 1s;">
+            <div class="text-6xl">🎈</div>
+        </div>
+        <div class="absolute top-32 left-1/4 balloon" style="animation-delay: 2s;">
+            <div class="text-5xl">🎈</div>
+        </div>
+        
+        <!-- Main Birthday Card -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl card-hover">
+            <!-- Sparkle Effects -->
+            <div class="flex justify-center mb-6">
+                <span class="text-4xl sparkle">✨</span>
+                <span class="text-5xl sparkle mx-4" style="animation-delay: 0.5s;">🌟</span>
+                <span class="text-4xl sparkle" style="animation-delay: 1s;">✨</span>
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="birthday-text text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mb-6 glow">
+                Chúc Mừng Sinh Nhật
+            </h1>
+            
+            <!-- Name -->
+            <h2 class="text-4xl md:text-6xl font-bold text-gradient bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent mb-8 pulse">
+                Quỳnh Nhi
+            </h2>
+            
+            <!-- Birthday Cake -->
+            <div class="text-8xl mb-8 float">🎂</div>
+            
+            <!-- Birthday Message -->
+            <div class="space-y-4 text-lg md:text-xl text-gray-700 mb-8">
+                <p class="sparkle">🎉 Chúc bạn một ngày sinh nhật thật vui vẻ và ý nghĩa! 🎉</p>
+                <p class="sparkle" style="animation-delay: 0.3s;">🌟 Mong rằng tuổi mới sẽ mang đến nhiều niềm vui và thành công! 🌟</p>
+                <p class="sparkle" style="animation-delay: 0.6s;">💖 Chúc bạn luôn khỏe mạnh, hạnh phúc và tràn đầy năng lượng! 💖</p>
+            </div>
+            
+            <!-- Party Elements -->
+            <div class="flex justify-center items-center space-x-4 text-4xl mb-8">
+                <span class="float">🎁</span>
+                <span class="float" style="animation-delay: 0.5s;">🎊</span>
+                <span class="float" style="animation-delay: 1s;">🥳</span>
+                <span class="float" style="animation-delay: 1.5s;">🎉</span>
+                <span class="float" style="animation-delay: 2s;">🍰</span>
+            </div>
+            
+            <!-- Age/Year (you can customize this) -->
+            <div class="text-2xl font-semibold text-purple-600 mb-6 pulse">
+                🎈 Happy Birthday 2024! 🎈
+            </div>
+            
+            <!-- Final Wishes -->
+            <div class="text-center">
+                <p class="text-xl font-medium text-pink-600 glow">
+                    Chúc bạn có một ngày thật đặc biệt! 🌈
+                </p>
+            </div>
+        </div>
+        
+        <!-- Bottom Decorations -->
+        <div class="mt-8 flex justify-center space-x-8 text-5xl">
+            <span class="balloon">🎈</span>
+            <span class="balloon" style="animation-delay: 1s;">🎈</span>
+            <span class="balloon" style="animation-delay: 2s;">🎈</span>
+        </div>
+    </div>
+    
+    <!-- Background Stars -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 text-yellow-300 text-2xl sparkle">⭐</div>
+        <div class="absolute top-1/3 right-1/4 text-yellow-300 text-xl sparkle" style="animation-delay: 1s;">⭐</div>
+        <div class="absolute bottom-1/4 left-1/3 text-yellow-300 text-2xl sparkle" style="animation-delay: 2s;">⭐</div>
+        <div class="absolute bottom-1/3 right-1/3 text-yellow-300 text-xl sparkle" style="animation-delay: 0.5s;">⭐</div>
+    </div>
+</body>
+</html>
